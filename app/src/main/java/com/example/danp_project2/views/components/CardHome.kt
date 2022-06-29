@@ -23,13 +23,15 @@ import com.example.danp_project2.navigation.AppScreens
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun CardHome(title: String, description: String, navController: NavController?){
+fun CardHome(title: String, description: String, navController: NavController, screen:Int){
     Card(
         modifier = Modifier
             .padding(8.dp),// margin
         onClick =  {
-            if (navController != null) {
+            if (screen == 1) {
                 navController.navigate(route=AppScreens.HomeGarbage.route +"/Este es un parametro")
+            }else {
+                navController.navigate(route=AppScreens.WorldGarbage.route)
             }
         },
         elevation = 8.dp,

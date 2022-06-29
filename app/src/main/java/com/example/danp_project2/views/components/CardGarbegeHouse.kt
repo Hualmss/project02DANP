@@ -46,7 +46,7 @@ fun BodyContent(garbage:GarbageEntity){
         shape = RoundedCornerShape(12.dp)
 
     ) {
-        Row(modifier = Modifier.padding(5.dp)
+        Row(modifier = Modifier.padding(5.dp).fillMaxWidth()
         ) {
             Image(
                 painterResource(R.drawable.ic_launcher_foreground),
@@ -59,7 +59,7 @@ fun BodyContent(garbage:GarbageEntity){
             Column(modifier = Modifier.padding(start = 8.dp)
                 .clickable {
                     expanded = !expanded
-                }) {
+                }.fillMaxWidth()) {
                 MyTexts(text = garbage.name, true)
                 Spacer(modifier = Modifier.width(8.dp))
 

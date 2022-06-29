@@ -1,6 +1,7 @@
 package com.example.danp_project2.views.screens
 
 import android.text.style.BackgroundColorSpan
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -31,6 +32,7 @@ import com.example.danp_project2.views.components.CardGarbegeHouse
 
 @Composable
 fun HomeGarbage(navController:NavController, garbageViewModel: GarbageViewModel){
+    Log.d("", "HOla mundo ageno")
     Scaffold(
         floatingActionButton = {
             ExtendedFloatingActionButton(

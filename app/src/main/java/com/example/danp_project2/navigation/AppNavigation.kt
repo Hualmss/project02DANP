@@ -12,6 +12,7 @@ import com.example.danp_project2.data.GarbageViewModel
 import com.example.danp_project2.views.screens.AddGarbageScreen
 import com.example.danp_project2.views.screens.HomeGarbage
 import com.example.danp_project2.views.screens.HomeScreen
+import com.example.danp_project2.views.screens.WorldGarbage
 
 @Composable
 fun AppNavigation(){//ese será el encargado de orquestar la navegacion, conocer y gestioknar pasos entre ellas
@@ -39,6 +40,11 @@ fun AppNavigation(){//ese será el encargado de orquestar la navegacion, conocer
             val garbageViewModel = ViewModelProvider(navController.currentBackStackEntry!!)[GarbageViewModel::class.java]
             AddGarbageScreen(garbageViewModel)
         }
+        composable(route=AppScreens.WorldGarbage.route){
+            //val garbageViewModel = ViewModelProvider(navController.currentBackStackEntry!!)[GarbageViewModel::class.java]
+            WorldGarbage()
+        }
+        //WorldGarbage
     }
     //este navcontroller se tiee que propaar a todas la spantallas ya que este conoce el etsado de las pantallas
 }
