@@ -4,6 +4,7 @@
     package="com.example.danp_project2">
 
     <application
+        android:name=".danp_project2"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
