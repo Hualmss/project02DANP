@@ -49,7 +49,19 @@ fun BodyContent(garbage:GarbageEntity){
         Row(modifier = Modifier.padding(5.dp).fillMaxWidth()
         ) {
             Image(
-                painterResource(R.drawable.ic_launcher_foreground),
+                painterResource(
+                    if(garbage.type=="metal") {
+                        R.drawable.metal
+                    }else if(garbage.type=="plastico"){
+                        R.drawable.plastic
+                    }else if(garbage.type=="organico"){
+                        R.drawable.organico
+                    }else if(garbage.type=="electronico"){
+                        R.drawable.baterias
+                    }else {
+                        R.drawable.papel
+                    }
+                ),
                 "la basura en mi casa",
                 modifier= Modifier
                     .clip(CircleShape)
