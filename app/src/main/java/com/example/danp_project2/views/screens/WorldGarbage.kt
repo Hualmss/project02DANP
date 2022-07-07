@@ -11,14 +11,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.danp_project2.data.GarbageViewModelFireBase
+import com.example.danp_project2.data.DataForFIrebase.GarbageViewModelFireBase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 //import androidx.compose.foundation.lazy.items
 import androidx.paging.compose.items
-import androidx.paging.LoadState.Loading
-import com.example.danp_project2.data.GarbageEntity
-import com.example.danp_project2.views.components.CardGarbegeHouse
 import com.example.danp_project2.views.components.GCard
 
 

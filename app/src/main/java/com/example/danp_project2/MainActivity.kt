@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Surface
 import androidx.paging.ExperimentalPagingApi
-import com.example.danp_project2.data.FirestorePagingSource
 import com.example.danp_project2.navigation.AppNavigation
 import com.example.danp_project2.ui.theme.DANPproject2Theme
 import dagger.hilt.android.AndroidEntryPoint

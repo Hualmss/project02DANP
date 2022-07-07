@@ -1,4 +1,4 @@
-package com.example.danp_project2.data
+package com.example.danp_project2.data.DataForRoom
 
 import androidx.lifecycle.LiveData
 

@@ -1,4 +1,4 @@
-package com.example.danp_project2.data
+package com.example.danp_project2.data.DataForRoom
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class GarbageViewModel(application: Application): AndroidViewModel(application) {
 
-    val  readAllData : LiveData<List<GarbageEntity>>
+     val  readAllData : LiveData<List<GarbageEntity>>
     private val repository: GarbageRopository
 
 
@@ -20,7 +20,7 @@ class GarbageViewModel(application: Application): AndroidViewModel(application) 
     }
 
 
-    fun addGarbage(garbage:GarbageEntity){
+    fun addGarbage(garbage: GarbageEntity){
         viewModelScope.launch(Dispatchers.IO) {
             repository
                 .addGarbage(garbage)

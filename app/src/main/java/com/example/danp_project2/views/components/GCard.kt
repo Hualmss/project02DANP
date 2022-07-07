@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
-import com.example.danp_project2.data.GarbageEntity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import androidx.compose.material.MaterialTheme
@@ -16,8 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
-import com.example.danp_project2.data.GarbageFB
+import com.example.danp_project2.data.DataForFIrebase.GarbageFB
 
 @Composable
 @InternalCoroutinesApi
@@ -58,7 +56,7 @@ fun GCard (
 }
 
 @Composable
-fun printCardGarbage(garbage:GarbageFB, lines:Int = Int.MAX_VALUE){
+fun printCardGarbage(garbage: GarbageFB, lines:Int = Int.MAX_VALUE){
     if(lines == 1){
         Text(text = garbage.name+"", color = Color.Black)
         return

@@ -1,4 +1,4 @@
-package com.example.danp_project2.data
+package com.example.danp_project2.data.DataForFIrebase
 
 data class GarbageFB (
     var name: String? =  null,

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,18 +20,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.danp_project2.R
-import com.example.danp_project2.data.GarbageEntity
-import com.example.danp_project2.navigation.AppScreens
+import com.example.danp_project2.data.DataForRoom.GarbageEntity
 
 @Composable
-fun CardGarbegeHouse(garbage:GarbageEntity) {
+fun CardGarbegeHouse(garbage: GarbageEntity) {
     Column(/*modifier = Modifier.padding(5.dp)*/) {
         BodyContent(garbage)
     }
 }
 
 @Composable
-fun BodyContent(garbage:GarbageEntity){
+fun BodyContent(garbage: GarbageEntity){
     //val scrollState = rememberScrollState()
     var expanded by remember{ mutableStateOf(false)}
     Card(
@@ -84,7 +82,7 @@ fun BodyContent(garbage:GarbageEntity){
 }
 
 @Composable
-fun printGarbage(garbage:GarbageEntity, lines:Int = Int.MAX_VALUE){
+fun printGarbage(garbage: GarbageEntity, lines:Int = Int.MAX_VALUE){
     val print:String ="Descripcion:\n"+garbage.description+".\n" +
             "Tipo: "+garbage.type+".\n" +
             "Recyclave: "+garbage.recyclave+".\n" +

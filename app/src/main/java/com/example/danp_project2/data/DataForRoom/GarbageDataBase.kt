@@ -1,4 +1,4 @@
-package com.example.danp_project2.data
+package com.example.danp_project2.data.DataForRoom
 
 import android.content.Context
 import androidx.room.Database
@@ -10,14 +10,14 @@ import androidx.room.RoomDatabase
     exportSchema = false
 )
 abstract class GarbageDataBase: RoomDatabase() {
-    abstract fun garbageDao():GarbageDao
+    abstract fun garbageDao(): GarbageDao
 
     //access point to UI
     companion object{
         @Volatile
         private var INSTANCE: GarbageDataBase? = null
 
-        fun getDatabase(context:Context): GarbageDataBase{
+        fun getDatabase(context:Context): GarbageDataBase {
             val tmpInstance = INSTANCE
             if(tmpInstance != null){
                 return tmpInstance

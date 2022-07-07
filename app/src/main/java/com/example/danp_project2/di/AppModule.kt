@@ -1,9 +1,9 @@
 package com.example.danp_project2.di
 
 import androidx.paging.PagingConfig
-import com.example.danp_project2.data.FirestorePagingSource
-import com.example.danp_project2.data.GarbageRepositoryFireBase
-import com.example.danp_project2.data.GarbageReposityImpl
+import com.example.danp_project2.data.DataForFIrebase.FirestorePagingSource
+import com.example.danp_project2.data.DataForFIrebase.GarbageRepositoryFireBase
+import com.example.danp_project2.data.DataForFIrebase.GarbageReposityImpl
 import com.example.danp_project2.dmn.GetGarbage
 import com.example.danp_project2.dmn.UseCases
 import dagger.Module
