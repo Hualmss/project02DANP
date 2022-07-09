@@ -7,14 +7,15 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.danp_project2.data.DataForRoom.GarbageEntity
-import com.example.danp_project2.data.DataForRoom.GarbageViewModel
+import com.example.danp_project2.data.DataForRoom.Garbage.GarbageEntity
+import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
 
 
 @Composable
@@ -23,6 +24,10 @@ fun AddGarbageScreen(garbageViewModel: GarbageViewModel, navController: NavContr
         topBar = {
             TopAppBar() {
                 Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Arrow Back",
+                    modifier = Modifier.clickable {
+                        navController.popBackStack()
+                    })
+                Icon(imageVector = Icons.Default.Star, contentDescription = "Arrow Back",
                     modifier = Modifier.clickable {
                         navController.popBackStack()
                     })

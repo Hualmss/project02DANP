@@ -1,4 +1,4 @@
-package com.example.danp_project2.data.DataForRoom
+package com.example.danp_project2.data.DataForRoom.Garbage
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

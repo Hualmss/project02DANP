@@ -37,7 +37,7 @@ fun BodyContent(navController: NavController){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
         ) {
-        Text("Bienvenido a Ecologiando", color= Color(41,201,39))
+
         Image(
 
             painterResource(R.drawable.logo),

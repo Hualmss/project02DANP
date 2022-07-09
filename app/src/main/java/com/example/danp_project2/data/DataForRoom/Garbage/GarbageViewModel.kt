@@ -1,4 +1,4 @@
-package com.example.danp_project2.data.DataForRoom
+package com.example.danp_project2.data.DataForRoom.Garbage
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -26,5 +26,6 @@ class GarbageViewModel(application: Application): AndroidViewModel(application) 
                 .addGarbage(garbage)
         }
     }
+
 
 }

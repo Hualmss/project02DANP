@@ -5,4 +5,5 @@ sealed class AppScreens (val route: String){
     object HomeGarbage: AppScreens("HomeGarbage")
     object AddGarbageScreen: AppScreens("AddGarbageScreen")
     object WorldGarbage: AppScreens("WorldGarbage")
+    object UserInfo: AppScreens("UserInfo")
 }

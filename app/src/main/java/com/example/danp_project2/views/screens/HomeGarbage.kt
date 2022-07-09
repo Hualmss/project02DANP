@@ -1,6 +1,5 @@
 package com.example.danp_project2.views.screens
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,6 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
@@ -24,18 +24,21 @@ import com.example.danp_project2.R
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.danp_project2.data.DataForRoom.GarbageViewModel
+import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
 import com.example.danp_project2.navigation.AppScreens
 import com.example.danp_project2.views.components.CardGarbegeHouse
 
-
 @Composable
 fun HomeGarbage(navController:NavController, garbageViewModel: GarbageViewModel){
-    Log.d("", "HOla mundo ageno")
+
     Scaffold(
         topBar = {
             TopAppBar() {
                 Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Arrow Back",
+                    modifier = Modifier.clickable {
+                        navController.popBackStack()
+                    })
+                Icon(imageVector = Icons.Default.Star, contentDescription = "Arrow Back",
                     modifier = Modifier.clickable {
                         navController.popBackStack()
                     })
@@ -137,3 +140,5 @@ fun Preview2(){
     }
     //HomeGarbage(/*navController*/)
 }
+
+

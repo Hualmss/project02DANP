@@ -37,13 +37,11 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun DANPproject2Theme(darkTheme: Int , content: @Composable () -> Unit) {
-    val colors = if (darkTheme == 1) {
+fun DANPproject2Theme(darkTheme: Boolean , content: @Composable () -> Unit) {
+    val colors = if (darkTheme) {
         DarkColorPalette
-    } else if (darkTheme == 2) {
+    } else {
         LightColorPalette
-    } else{
-        EcoColorPalette
     }
 
     MaterialTheme(

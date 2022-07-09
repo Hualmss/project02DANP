@@ -8,11 +8,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.paging.ExperimentalPagingApi
-import com.example.danp_project2.data.DataForRoom.GarbageViewModel
-import com.example.danp_project2.views.screens.AddGarbageScreen
-import com.example.danp_project2.views.screens.HomeGarbage
-import com.example.danp_project2.views.screens.HomeScreen
-import com.example.danp_project2.views.screens.WorldGarbage
+import com.example.danp_project2.data.DataForDataStorage.SettingsViewModel
+import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
+import com.example.danp_project2.views.screens.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -20,16 +18,24 @@ import kotlinx.coroutines.InternalCoroutinesApi
 @InternalCoroutinesApi
 @ExperimentalPagingApi
 @ExperimentalCoroutinesApi
-fun AppNavigation(){//ese será el encargado de orquestar la navegacion, conocer y gestioknar pasos entre ellas
+fun AppNavigation(settingsViewModel:SettingsViewModel ,prueba:Boolean){//ese será el encargado de orquestar la navegacion, conocer y gestioknar pasos entre ellas
     //para navegar se encuentran en una biblioteca a parte ne el gradle
     //2 elementos escenciales
     val navController= rememberNavController()//esta se encargará de gestionar el estado de navegacion entre ellas
 
     //NavHost(navController = navController, graph = )
-    NavHost(navController = navController, startDestination = AppScreens.HomeScreen.route){//este se encargará de conocer las pantallas y como navegar entre ellas
+
+    NavHost(navController = navController, startDestination =  if(prueba) AppScreens.UserInfo.route else AppScreens.HomeScreen.route){//este se encargará de conocer las pantallas y como navegar entre ellas
+
+        composable(route = AppScreens.UserInfo.route){
+            //val settingsViewModel = ViewModelProvider(navController.currentBackStackEntry!!)[SettingsViewModel::class.java]
+            userInfo(settingsViewModel, navController)
+        }
         composable(route = AppScreens.HomeScreen.route){
             HomeScreen(navController)//se le apunta al elemento  composable
         }
+
+
         composable(route = AppScreens.HomeGarbage.route + "/{text}",//recive un nuevo parametro like url
             arguments = listOf(navArgument(name="text"){//la lista de argumentos
                 type = NavType.StringType//tipos string

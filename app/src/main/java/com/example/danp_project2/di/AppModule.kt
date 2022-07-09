@@ -1,6 +1,8 @@
 package com.example.danp_project2.di
 
+import android.content.Context
 import androidx.paging.PagingConfig
+import com.example.danp_project2.danp_project2
 import com.example.danp_project2.data.DataForFIrebase.FirestorePagingSource
 import com.example.danp_project2.data.DataForFIrebase.GarbageRepositoryFireBase
 import com.example.danp_project2.data.DataForFIrebase.GarbageReposityImpl
@@ -15,6 +17,8 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.Query.Direction.ASCENDING
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Singleton
 
 @Module
 @ExperimentalCoroutinesApi
@@ -46,4 +50,13 @@ object AppModule {
     fun provideUseCases(repository: GarbageRepositoryFireBase) = UseCases(
         getProducts = GetGarbage(repository)
     )
+
+    @Singleton
+    @Provides
+    fun provideApplication(@ApplicationContext app:Context):
+            danp_project2{
+        return app as danp_project2
+    }
+
+
 }
