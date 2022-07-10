@@ -20,6 +20,9 @@ import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
 
 @Composable
 fun AddGarbageScreen(garbageViewModel: GarbageViewModel, navController: NavController){
+
+
+    //id?.let { garbage= garbageViewModel.getGarbageById(id) }
     Scaffold(
         topBar = {
             TopAppBar() {

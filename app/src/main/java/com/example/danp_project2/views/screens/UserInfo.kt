@@ -14,10 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.danp_project2.data.DataForDataStorage.SettingsViewModel
+import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
+import com.example.danp_project2.data.DataForRoom.User.UserEntity
 import com.example.danp_project2.navigation.AppScreens
 
 @Composable
-fun userInfo(garbageViewModel: SettingsViewModel, navController: NavController){
+fun userInfo(settingsViewModel: SettingsViewModel, navController: NavController,garbageViewModel: GarbageViewModel){
     val scrollState = rememberScrollState()
     Column(modifier = Modifier.padding(20.dp)
         .verticalScroll(scrollState),
@@ -76,7 +78,18 @@ fun userInfo(garbageViewModel: SettingsViewModel, navController: NavController){
         )
 
         Button(onClick = {
-            garbageViewModel.saveToDataStoreFirstTime()
+            val newUser = UserEntity(
+                name = name,
+                lastname =lastname,
+                address = address,
+                country = country,
+                city = city,
+                phoneNumber = phoneNumber,
+                email = email,
+                age = age
+            )
+            garbageViewModel.addUser(newUser)
+            settingsViewModel.saveToDataStoreFirstTime()
             navController.navigate(route= AppScreens.HomeScreen.route)
         }
         ) {

@@ -29,7 +29,8 @@ fun AppNavigation(settingsViewModel:SettingsViewModel ,prueba:Boolean){//ese ser
 
         composable(route = AppScreens.UserInfo.route){
             //val settingsViewModel = ViewModelProvider(navController.currentBackStackEntry!!)[SettingsViewModel::class.java]
-            userInfo(settingsViewModel, navController)
+            val garbageViewModel = ViewModelProvider(navController.currentBackStackEntry!!)[GarbageViewModel::class.java]
+            userInfo(settingsViewModel, navController,garbageViewModel)
         }
         composable(route = AppScreens.HomeScreen.route){
             HomeScreen(navController)//se le apunta al elemento  composable

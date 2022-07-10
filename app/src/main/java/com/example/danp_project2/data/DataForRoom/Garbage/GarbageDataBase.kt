@@ -4,13 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.danp_project2.data.DataForRoom.User.UserDao
+import com.example.danp_project2.data.DataForRoom.User.UserEntity
 
-@Database(entities = [GarbageEntity::class],
-    version = 1,
+@Database(entities = [GarbageEntity::class, UserEntity::class],
+    version = 2,
     exportSchema = false
 )
 abstract class GarbageDataBase: RoomDatabase() {
     abstract fun garbageDao(): GarbageDao
+    abstract fun userDao():UserDao
 
     //access point to UI
     companion object{
@@ -27,7 +30,7 @@ abstract class GarbageDataBase: RoomDatabase() {
                     context.applicationContext,
                     GarbageDataBase::class.java,
                     "garbage_db"
-                ).build()
+                ) .fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }
