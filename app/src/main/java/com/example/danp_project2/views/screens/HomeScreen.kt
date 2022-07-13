@@ -47,9 +47,14 @@ fun BodyContent(navController: NavController){
                 .size(324.dp)//modificador
 
         )
-        CardHome(title = "Basura en casa", description = "Lista y averigua el impacto de la basura que generas en casa",navController,1)
+        CardHome(
+            title = "Basura en casa",
+            description = "Lista y averigua el impacto de la basura que generas en casa",
+            navController,1)
 
-        CardHome(title = "Basura del Mundo", description = "Averigua datos interesanteacerca de distintos desechos domesticos", navController,2)
+        CardHome(title = "Basura del Mundo",
+            description = "Averigua datos interesanteacerca de distintos desechos domesticos",
+            navController,2)
     }
 }
 

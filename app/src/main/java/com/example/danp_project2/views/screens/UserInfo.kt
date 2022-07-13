@@ -1,8 +1,8 @@
 package com.example.danp_project2.views.screens
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
+import android.widget.Toast
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -11,17 +11,31 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.danp_project2.data.DataForDataStorage.SettingsViewModel
 import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
 import com.example.danp_project2.data.DataForRoom.User.UserEntity
 import com.example.danp_project2.navigation.AppScreens
+import kotlinx.coroutines.withContext
 
 @Composable
 fun userInfo(settingsViewModel: SettingsViewModel, navController: NavController,garbageViewModel: GarbageViewModel){
     val scrollState = rememberScrollState()
-    Column(modifier = Modifier.padding(20.dp)
+    Text(
+        "Registra tus datos a Ecologia Verde",
+        style = TextStyle(
+            textAlign = TextAlign.Center,
+            fontSize = 35.sp
+        )
+    )
+    Spacer(modifier = Modifier.width(18.dp))
+    Column(modifier = Modifier
+        .padding(65.dp)
         .verticalScroll(scrollState),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally)
@@ -78,19 +92,35 @@ fun userInfo(settingsViewModel: SettingsViewModel, navController: NavController,
         )
 
         Button(onClick = {
-            val newUser = UserEntity(
-                name = name,
-                lastname =lastname,
-                address = address,
-                country = country,
-                city = city,
-                phoneNumber = phoneNumber,
-                email = email,
-                age = age
-            )
-            garbageViewModel.addUser(newUser)
-            settingsViewModel.saveToDataStoreFirstTime()
-            navController.navigate(route= AppScreens.HomeScreen.route)
+            if (name != "" &&
+                lastname!= "" &&
+                address!= "" &&
+                country!= "" &&
+                city!= "" &&
+                phoneNumber!= "" &&
+                email!= "" &&
+                age!= ""
+            ) {
+                val newUser = UserEntity(
+                    name = name,
+                    lastname = lastname,
+                    address = address,
+                    country = country,
+                    city = city,
+                    phoneNumber = phoneNumber,
+                    email = email,
+                    age = age
+                )
+                garbageViewModel.addUser(newUser)
+                settingsViewModel.saveToDataStoreFirstTime()
+                navController.navigate(route = AppScreens.HomeScreen.route)
+                val toast = Toast.makeText(navController.context, "Usuario registrado correctamente", Toast.LENGTH_LONG)
+                toast.show()
+            }
+            else{
+                val toast = Toast.makeText(navController.context, "Ingrese sus datos correctamente", Toast.LENGTH_LONG)
+                toast.show()
+            }
         }
         ) {
             Text(text = "Ingresar")

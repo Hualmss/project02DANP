@@ -10,8 +10,6 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class danp_project2 : Application(){
 
-
-    //https://www.youtube.com/watch?v=oE4iCfS6Gso
     val isDark = mutableStateOf(true)
     val isFIrstTime = mutableStateOf(true)
 

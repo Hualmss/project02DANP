@@ -39,10 +39,6 @@ fun HomeGarbage(navController:NavController, garbageViewModel: GarbageViewModel)
                     modifier = Modifier.clickable {
                         navController.popBackStack()
                     })
-                Icon(imageVector = Icons.Default.Star, contentDescription = "Arrow Back",
-                    modifier = Modifier.clickable {
-                        navController.popBackStack()
-                    })
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Basura de tu casa")
             }

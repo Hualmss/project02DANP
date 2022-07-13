@@ -33,6 +33,7 @@ import com.example.danp_project2.data.DataForRoom.Garbage.GarbageEntity
 import com.example.danp_project2.data.DataForRoom.Garbage.GarbageViewModel
 import com.example.danp_project2.data.DataForRoom.User.UserEntity
 import com.example.danp_project2.navigation.AppScreens
+import com.example.danp_project2.views.screens.MyTexts
 
 @Composable
 fun CardGarbegeHouse(garbage: GarbageEntity, garbageViewModel: GarbageViewModel, navController: NavController) {

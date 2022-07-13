@@ -13,7 +13,7 @@ class GarbageViewModel(application: Application): AndroidViewModel(application) 
 
     val readAllData : LiveData<List<GarbageEntity>>
     val readAllDataUser : LiveData<List<UserEntity>>
-    private val repository: GarbageRopository
+    private val repository: GarbageRepository
     private val repository2: UserRepository
 
 
@@ -21,7 +21,7 @@ class GarbageViewModel(application: Application): AndroidViewModel(application) 
         val garbageDao = GarbageDataBase.getDatabase(application).garbageDao()
         val userDao = GarbageDataBase.getDatabase(application).userDao()
         repository2 = UserRepository(userDao)
-        repository = GarbageRopository(garbageDao)
+        repository = GarbageRepository(garbageDao)
         readAllData = repository.reaAllData
         readAllDataUser = repository2.reaAllData
 

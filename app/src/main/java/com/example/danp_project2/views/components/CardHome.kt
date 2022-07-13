@@ -40,18 +40,35 @@ fun CardHome(title: String, description: String, navController: NavController, s
     ) {
         Row(modifier = Modifier.padding(5.dp)
         ) {
-            Image(
-                painterResource(R.drawable.ic_launcher_foreground),
-                "la basura en mi casa",
-                modifier= Modifier
-                    .clip(CircleShape)
-                    .background(MaterialTheme.colors.primary)
-                    .size(54.dp)//modificador
-            )
-            Column(modifier = Modifier.padding(start = 8.dp)) {
-                MyTexts(text = title, true)
-                Spacer(modifier = Modifier.width(8.dp))
-                MyTexts(text = description, false)
+            if(title.equals("Basura en casa")) {
+                Image(
+                    painterResource(R.drawable.bcasa),
+                    "la basura en mi casa",
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colors.primary)
+                        .size(54.dp)//modificador
+                )
+                Column(modifier = Modifier.padding(start = 8.dp)) {
+                    MyTexts(text = title, true)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    MyTexts(text = description, false)
+                }
+            }
+            if(title.equals("Basura del Mundo")) {
+                Image(
+                    painterResource(R.drawable.bmundo),
+                    "la basura en mi casa",
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colors.primary)
+                        .size(54.dp)//modificador
+                )
+                Column(modifier = Modifier.padding(start = 8.dp)) {
+                    MyTexts(text = title, true)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    MyTexts(text = description, false)
+                }
             }
         }
     }

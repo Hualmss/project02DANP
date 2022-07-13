@@ -36,7 +36,7 @@ fun WorldGarbage(
         Box(
             modifier = Modifier.fillMaxSize()
         ) {
-            Text(text = "asd")
+            Text(text = "")
             LazyColumn {
                 items(
                     items = products,

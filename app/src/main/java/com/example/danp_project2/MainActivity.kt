@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
@@ -70,7 +71,7 @@ class MainActivity : ComponentActivity() {
                                         setupUi()
                                     })
                                 Spacer(modifier = Modifier.width(8.dp))
-                                Text("Añade informacion de una nueva basura")
+                                Text("Bienvenidos a Ecologia Verde!")
                             }
 
                         }
@@ -117,9 +118,6 @@ class MainActivity : ComponentActivity() {
 
     }
     private fun verify(settingManager: SettingManager){
-
-
-
         lifecycleScope.launch{
             application.isFIrstTime.value = settingManager.firstTime.first()
 

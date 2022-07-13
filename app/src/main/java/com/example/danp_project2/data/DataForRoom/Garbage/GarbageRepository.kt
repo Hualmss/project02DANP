@@ -2,7 +2,7 @@ package com.example.danp_project2.data.DataForRoom.Garbage
 
 import androidx.lifecycle.LiveData
 
-class GarbageRopository(private val garbageDao: GarbageDao) {
+class GarbageRepository(private val garbageDao: GarbageDao) {
 
 
     val reaAllData: LiveData<List<GarbageEntity>> = garbageDao.readAllData()
